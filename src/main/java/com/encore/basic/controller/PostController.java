@@ -49,6 +49,7 @@ public class PostController {
     public String PostDetailView(@RequestParam(value = "id") int id, Model model) {
         try {
             PostResDto postResDto = postService.findById(id);
+
             model.addAttribute("postList", postResDto);
             return "detail";
         } catch (NoSuchElementException e) {
